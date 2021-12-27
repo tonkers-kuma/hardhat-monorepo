@@ -35,7 +35,7 @@ function promptAndSubmit(): Promise<void | Error> {
             try {
               const strategyContract = await ethers.getContractAt('IBaseStrategy', strategy);
               try {
-                const strategyKeeper = await strategyContract.keeper();
+                const strategyKeeper = await strategyContract.callStatic.keeper();
                 if (strategyKeeper != contracts.v2Keeper.mainnet) {
                   console.log(strategy, 'keeper mismatch:', strategyKeeper);
                   continue;

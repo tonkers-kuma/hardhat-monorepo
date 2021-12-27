@@ -50,6 +50,11 @@ export const quote = async (): Promise<void> => {
   }
 };
 
+export const staticQuote = async (): Promise<TxPriceResponse> => {
+  const response = await axios.get(`https://api.txprice.com/`, { timeout: TIMEOUT });
+  return response.data as TxPriceResponse;
+};
+
 export const start = async () => {
   await quote();
   quoteInterval = setInterval(quote, INTERVAL);
