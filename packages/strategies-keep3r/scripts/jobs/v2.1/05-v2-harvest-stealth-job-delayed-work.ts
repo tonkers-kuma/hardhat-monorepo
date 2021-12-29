@@ -137,7 +137,7 @@ async function flashBotsSendTx(workTx: PopulatedTransaction): Promise<any> {
       nonce,
       gasPrice,
       // maxFeePerGas,
-      // maxPriorityFeePerGas: fairmaxPriorityFeePerGas,
+      // maxPriorityFeePerGas: fairmaxPriorityFeePerGas, s
     }
   );
 
