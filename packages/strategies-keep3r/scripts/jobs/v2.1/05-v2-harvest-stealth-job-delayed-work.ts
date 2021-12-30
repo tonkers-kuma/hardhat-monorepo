@@ -79,11 +79,6 @@ function getWorkable(): Promise<void | Error> {
     } catch (err: any) {
       reject(`Error while force work v2 stealth strategies: ${err.message}`);
     }
-    // } else {
-    //   console.error('Aborted!');
-    //   resolve();
-    // }
-    // });
   });
 }
 
