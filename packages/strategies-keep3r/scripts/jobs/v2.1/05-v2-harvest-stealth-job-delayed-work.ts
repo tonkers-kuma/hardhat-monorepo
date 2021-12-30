@@ -25,7 +25,7 @@ function getWorkable(): Promise<void | Error> {
   return new Promise(async (resolve, reject) => {
     const [owner] = await ethers.getSigners();
     let signer = owner;
-    if (owner.address != accounts.yKeeperWorker) {
+    if (owner.address != accounts.yKeeperWorker && owner.address != accounts.yKeeper) {
       console.log('on fork mode, impersonating yKeeperWorker');
       await network.provider.request({
         method: 'hardhat_impersonateAccount',
